@@ -114,7 +114,5 @@ source $ZSH/oh-my-zsh.sh
 
 KITTY_ENABLE_WAYLAND=1
 source /home/lorem10/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /home/lorem10/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /home/lorem10/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 eval $(thefuck --alias)
