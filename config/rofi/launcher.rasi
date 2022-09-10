@@ -14,7 +14,8 @@ configuration{
 
 window {
     border-radius:10px;
-    location:center;
+    location:south;        
+    y-offset:  -60;
     background-color:@bgColor;
     width:800px;
     height:544px;

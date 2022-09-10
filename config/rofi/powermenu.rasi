@@ -7,16 +7,18 @@ configuration{
     TxtColor: #fff;
     background-color:      @bgColor;
     text-color:            @TxtColor;
-
+    font: "Symbols Nerd Font 12";
     border:none;
 }
 
 window {
     border-radius:10px;
-    location:center;
+    location:north east;
+    x-offset:-20px;
+    y-offset:50px;
     background-color:@bgColor;
-    width:800px;
-    height:386px;
+    width:250px;
+    height:333px;
     padding:0;
     border:none;
 }
@@ -27,6 +29,7 @@ mainbox {
 }
 
 inputbar {
+  enabled:false;
   padding:25px;
   border:none;
   children:[prompt,entry];
