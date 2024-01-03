@@ -1,5 +1,0 @@
-require('other_modules.fileexplorer')
-require('other_modules.bufferline')
-require('other_modules.cmp')
-require('other_modules.indentblankline')
-require('other_modules.autopairs')

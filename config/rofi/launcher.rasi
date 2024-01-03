@@ -4,7 +4,7 @@ configuration{
   modi:[window,drun];
 }
 * {
-    bgColor: #00000030;
+    bgColor:#00000066;
     TxtColor: #fff;
     background-color:      @bgColor;
     text-color:            @TxtColor;
@@ -13,12 +13,11 @@ configuration{
 }
 
 window {
-    border-radius:10px;
-    location:south;        
-    y-offset:  -60;
+    location:West;        
+    y-offset:  0;
     background-color:@bgColor;
-    width:800px;
-    height:544px;
+    width:450px;
+    height:100%;
     padding:0;
     border:none;
 }
@@ -29,24 +28,22 @@ mainbox {
 }
 
 inputbar {
-  padding:25px;
   border:none;
-  children:[prompt,entry,num-filtered-rows,num-rows];
+  children:[entry];
 }
 
 prompt{
   text-color: @TxtColor;
   background-color:transparent;
   padding:10px;
-  margin:0 10px 0 0;
+  margin:0 0px 0 0;
 }
 
 entry {
+  padding:20px 25px  20px 25px;
   placeholder-color:#ddd;
-  border-radius:10px;
-  padding:10px;
   expand:     false;
-  width:      500px;
+  width:      450px;
   text-color: @TxtColor;
 
 }
@@ -68,8 +65,8 @@ num-filtered-rows{
 
 listview {
     layout:vertical;
-    spacing:6;
-    columns:2;
+    spacing:4;
+    columns:1;
     border:0;
     padding:25px;
 }
@@ -80,8 +77,11 @@ element {
 }
 
 element selected.normal{
-  background-color:@bgColor;
-  border-radius:10px;
+  border : 0px 0px 1px 0px;
+  border-color: white;
+  border-radius:0px;
+  background-color:#ffffff10;
+
 }
 element selected.urgent{
   background-color:@bgColor;
@@ -114,7 +114,7 @@ element-text{
 
 element-icon{
   background-color:transparent;
-  size:55;
+  size:45;
 }   
 
 
