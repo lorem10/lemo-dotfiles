@@ -2,6 +2,8 @@ local awful = require("awful")
 local gears = require("gears")
 local wibox = require("wibox")
 
+local xresources          = require("beautiful.xresources")
+local dpi                 = xresources.apply_dpi
 -- TODO: splite this code to another component
 local tasklist_buttons = gears.table.join(
   awful.button({}, 1, function(c)
@@ -32,11 +34,11 @@ local function setup_tasklist(s)
     buttons         = tasklist_buttons,
     layout          = {
       layout = wibox.layout.fixed.horizontal,
-      spacing = 7,
+      spacing = dpi(7),
     },
     style           = {
       shape = function(cr, width, height)
-        gears.shape.rounded_bar(cr, 36, 36)
+        gears.shape.rounded_bar(cr, dpi(36), dpi(36))
       end,
       bg    = "#ffffff20",
     },
@@ -47,18 +49,18 @@ local function setup_tasklist(s)
             {
               id            = 'icon_role',
               widget        = wibox.widget.imagebox,
-              forced_height = 20,
-              forced_width  = 20,
+              forced_height = dpi(20),
+              forced_width  = dpi(20),
             },
-            margins = 2,
+            margins = dpi(2),
             widget  = wibox.container.margin,
             layout  = wibox.layout.flex.horizontal,
           },
           layout = wibox.layout.flex.horizontal,
         },
-        top    = 7,
-        left   = 8,
-        right  = 8,
+        top    = dpi(7),
+        left   = dpi(8),
+        right  = dpi(8),
         widget = wibox.container.margin,
 
       },

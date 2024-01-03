@@ -2,6 +2,9 @@ local gears = require("gears")
 local awful = require("awful")
 local wibox = require("wibox")
 
+local xresources          = require("beautiful.xresources")
+local dpi                 = xresources.apply_dpi
+
 local taglist_buttons = gears.table.join(
   awful.button({}, 1, function(t) t:view_only() end),
   awful.button({ modkey }, 1, function(t)
@@ -24,21 +27,21 @@ local function setup_taglist(s)
     screen          = s,
     filter          = awful.widget.taglist.filter.all,
     layout          = {
-      spacing = 20,
+      spacing = dpi(22),
       layout  = wibox.layout.fixed.horizontal,
     },
     style           = {
       shape              = function(cr, width, height)
-        gears.shape.rounded_bar(cr, 14, 14)
+        gears.shape.rounded_bar(cr, dpi(12), dpi(12))
       end,
-      shape_border_width = 2,
+      shape_border_width = dpi(2),
       shape_border_color = "#ffffff",
       bg_focus           = "#ffffff"
     },
     widget_template = {
       {
-        forced_width  = 16,
-        forced_height = 18,
+        forced_width  = dpi(14),
+        forced_height = dpi(14),
         widget        = wibox.widget.textbox,
         markup        = ""
       },

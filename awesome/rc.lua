@@ -2,6 +2,7 @@
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 local beautiful = require("beautiful")
+local brightness_osd = require("components.brightness_osd")
 beautiful.init("/home/alireza/.config/awesome/theme/theme.lua")
 
 
@@ -14,6 +15,7 @@ local awful = require("awful")
 require("awful.autofocus")
 -- Widget and layout library
 local wibox = require("wibox")
+local volume = require("components.volume-osd")
 -- Theme handling library
 -- Notification library
 local naughty = require("naughty")
@@ -143,7 +145,8 @@ awful.screen.connect_for_each_screen(function(s)
     wibar.setup_wibar(s)
     -- Wallpaper
     set_wallpaper(s)
-
+    volume.setup_volume_osd(s)
+    brightness_osd.setup_brightness_osd(s)
     -- Each screen has its own tag table.
     awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8" }, s, awful.layout.layouts[8])
     -- Create a promptbox for each screen
@@ -361,8 +364,30 @@ awful.rules.rules = {
     },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
+    {
+        rule = { class = "Firefox" },
+        properties = { screen = 1, tag = "3" }
+    },
+    {
+        rule = { class = "Google-chrome" },
+        properties = { screen = 1, tag = "3" }
+    },
+    {
+        rule = { class = "Code" },
+        properties = { screen = 1, tag = "2" }
+    },
+    {
+        rule = { class = "nekoray" },
+        properties = { screen = 1, tag = "8" }
+    },
+    {
+        rule = { class = "Spotify" },
+        properties = { screen = 1, tag = "7" }
+    },
+    {
+        rule = { class = "Telegram" },
+        properties = { screen = 1, tag = "6" }
+    },
 }
 -- }}}
 

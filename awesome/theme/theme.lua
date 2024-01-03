@@ -18,15 +18,19 @@ local default_themes_path = filesystem.get_themes_dir()
 
 local theme               = {}
 
+-- h1 { font-size: 24px; }
+-- h2 { font-size: 19.0488px; }
+-- h3 { font-size: 15.1191px; }
+-- p { font-size: 12px; }
+-- small { font-size: 9.5244px; }
+theme.font                 = "Lato 12"
 
-theme.font                 = "Lato 11"
-
-theme.bg_normal            = "#00000066"
-theme.bg_focus             = "#00000080"
+theme.bg_normal            = "#000000BD"
+theme.bg_focus             = "#ffffff90"
 theme.bg_urgent            = "#f7672a"
 theme.bg_minimize          = "#00000080"
 theme.bg_systray           = "#00000000"
-theme.systray_icon_spacing = 15
+theme.systray_icon_spacing = dpi(15)
 
 theme.fg_normal            = "#aaaaaa"
 theme.fg_focus             = "#ffffff"
@@ -67,16 +71,16 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 
 
 -- config notifications
-theme.notification_margin               = 10
+theme.notification_margin               = dpi(10)
 theme.notification_font                 = theme.font
 theme.notification_border_width         = 0
 theme.notification_position             = 'top_right'
-theme.notification_icon_size            = 100
+theme.notification_icon_size            = dpi(100)
 theme.notification_icon_resize_strategy = 'center'
-theme.notification_spacing              = 10
+theme.notification_spacing              = dpi(10)
 theme.notification_border_color         = "#00000000"
-theme.notification_max_width            = 480
-theme.notification_width                = 350
+theme.notification_max_width            = dpi(480)
+theme.notification_width                = dpi(350)
 theme.notification_shape                = function(cr, width, height)
     gears.shape.rounded_rect(cr, width, height, 5)
 end
@@ -103,7 +107,7 @@ theme.menu_width                        = dpi(100)
 -- beautiful.variable in your rc.lua
 --theme.bg_widget = "#cc0000"
 
-theme.wallpaper                         = theme_dir .. "/wallpaper/28.jpg"
+theme.wallpaper                         = theme_dir .. "/wallpaper/8.jpg"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh                      = default_themes_path .. "default/layouts/fairhw.png"

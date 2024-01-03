@@ -143,6 +143,8 @@ local globalkeys = gears.table.join(
         'XF86AudioRaiseVolume',
         function()
             awful.spawn('amixer -D pulse sset Master 5%+', false)
+            awesome.emit_signal('widget::volume:update')
+            awesome.emit_signal("module::volume_osd:show", true)
         end,
         { description = 'increase volume up by 5%', group = 'hotkeys' }
     ),
@@ -151,6 +153,8 @@ local globalkeys = gears.table.join(
         'XF86AudioLowerVolume',
         function()
             awful.spawn('amixer -D pulse sset Master 5%-', false)
+            awesome.emit_signal('widget::volume:update')
+            awesome.emit_signal("module::volume_osd:show", true)
         end,
         { description = 'decrease volume up by 5%', group = 'hotkeys' }
     ),
@@ -159,6 +163,8 @@ local globalkeys = gears.table.join(
         'XF86AudioMute',
         function()
             awful.spawn('amixer -D pulse set Master 1+ toggle', false)
+            awesome.emit_signal('widget::volume:update')
+            awesome.emit_signal("module::volume_osd:show", true)
         end,
         { description = 'toggle mute', group = 'hotkeys' }
     ),
@@ -167,7 +173,10 @@ local globalkeys = gears.table.join(
         {},
         'XF86MonBrightnessUp',
         function()
-            awful.spawn('brightnessctl set 10+', false)
+            awful.spawn('brightnessctl set 35+', false)
+            awesome.emit_signal('widget::brightness:update')
+            awesome.emit_signal("module::brightness_osd:show", true)
+
         end,
         { description = 'increase brightness by 10%', group = 'hotkeys' }
     ),
@@ -175,7 +184,9 @@ local globalkeys = gears.table.join(
         {},
         'XF86MonBrightnessDown',
         function()
-            awful.spawn('brightnessctl set 10-', false)
+            awful.spawn('brightnessctl set 35-', false)
+            awesome.emit_signal('widget::brightness:update')
+            awesome.emit_signal("module::brightness_osd:show", true)
         end,
         { description = 'decrease brightness by 10%', group = 'hotkeys' }
     ),
