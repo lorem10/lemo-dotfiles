@@ -6,18 +6,19 @@ The **awesome wm** dotfiles!
 
 ![screenshot](https://github.com/lorem10/lemo-dotfiles/blob/awesomewm/screenshots/1.png?raw=true)
 
-![screenshot](https://github.com/lorem10/lemo-dotfiles/blob/awewomewm/screenshots/2.png?raw=true)
 you can see the all screenshot in screenshots directory
 
 ### Configurations
 
 - [awesomewm](https://github.com/lorem10/lemo-dotfiles/tree/awesomewm) (Window Manager)
 
-### Wallpaper
-
-### Fonts
-
 ### Dependencies
+- [awesomewm](https://awesomewm.org/download/)
+- [`picom`](https://archlinux.org/packages/?name=picom)
+- [`rofi`](https://archlinux.org/packages/?name=rofi)
+- [`kitty`](https://archlinux.org/packages/?name=kitty)
+- scrot
+- [`brightnessctl`](https://github.com/Hummer12007/brightnessctl#installation)
 
 ## Installation
 
@@ -36,20 +37,6 @@ cd lemo-dotfiles/
 ```sh
 cp -r config/* ~/.config/
 ```
-
-### More screenshots
-
-| Emoji Menu                                                                                            |
-| ----------------------------------------------------------------------------------------------------- |
-| ![Screenshot](https://github.com/lorem10/lemo-dotfiles/blob/main/screenshots/rofi-emoji.png?raw=true) |
-
-| Application Menu                                                                                         |
-| -------------------------------------------------------------------------------------------------------- |
-| ![Screenshot](https://github.com/lorem10/lemo-dotfiles/blob/main/screenshots/rofi-launcher.png?raw=true) |
-
-| FireFox                                                                                            |
-| -------------------------------------------------------------------------------------------------- |
-| ![Screenshot](https://github.com/lorem10/lemo-dotfiles/blob/main/screenshots/firefox.png?raw=true) |
 
 ## Contributions
 
