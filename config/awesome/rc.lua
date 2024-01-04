@@ -3,14 +3,17 @@
 pcall(require, "luarocks.loader")
 local beautiful = require("beautiful")
 local brightness_osd = require("components.brightness_osd")
-beautiful.init("/home/alireza/.config/awesome/theme/theme.lua")
+local gears = require("gears")
+local filesystem = gears.filesystem
+
+local theme_dir = filesystem.get_configuration_dir() .. '/theme'
+beautiful.init(theme_dir .. "/theme.lua")
 
 
 require("signals")
 local wibar = require("components.wibar")
 local globalkeys = require("keys.global")
 -- Standard awesome library
-local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
 -- Widget and layout library
