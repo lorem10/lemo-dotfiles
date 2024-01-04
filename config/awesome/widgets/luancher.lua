@@ -1,32 +1,15 @@
+local wibox = require("wibox")
+local awful = require("awful")
 local beautiful = require("beautiful")
 
-local awful = require("awful")
-local has_fdo, freedesktop = pcall(require, "freedesktop")
+local mylauncher = wibox.widget {
+    image = beautiful.awesome_icon,
+    resize = false,
+    widget = wibox.widget.imagebox
+}
 
-local menu_awesome = { "awesome", myawesomemenu, beautiful.awesome_icon }
-local menu_terminal = { "open terminal", terminal }
-
-local debian = require("debian.menu")
-
-
-if has_fdo then
-  mymainmenu = freedesktop.menu.build({
-    before = { menu_awesome },
-    after = { menu_terminal }
-  })
-else
-  mymainmenu = awful.menu({
-    items = {
-      menu_awesome,
-      { "Debian", debian.menu.Debian_menu.Debian },
-      menu_terminal,
-    }
-  })
-end
-
-mylauncher = awful.widget.launcher({
-  image = beautiful.awesome_icon,
-  menu = mymainmenu
-})
+mylauncher:connect_signal("button::press", function()
+    awful.spawn.with_shell("rofi -show drun -theme $HOME/.config/rofi/launcher")
+end)
 
 return mylauncher
